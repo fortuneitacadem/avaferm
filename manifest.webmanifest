@@ -1,9 +1,9 @@
 {
-    "name": "Frenzy Farming",
-    "short_name": "Frenzy Farming",
+    "name": "AVAFerm",
+    "short_name": "AVAFerm",
     "start_url": "index.html",
     "display": "fullscreen",
-    "background_color": "#231F20",
+    "background_color": "#000000",
     "theme_color": "#000",
     "description": "Samir",
     "icons": [{

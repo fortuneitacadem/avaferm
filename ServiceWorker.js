@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-Frenzy Farming-1.0";
+const cacheName = "UBT-TEAM-AVAFerm-0.0.1";
 const contentToCache = [
     "Build/avaferm.loader.js",
     "Build/avaferm.framework.js",
