@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_agent_application_tree" model="ir.ui.view">
+        <field name="name">agent.application.list</field>
+        <field name="model">agent.application</field>
+        <field name="arch" type="xml">
+            <list string="Agent Arizalari" decoration-info="state == 'new'" decoration-success="state == 'accepted'" decoration-danger="state == 'rejected'">
+                <field name="name"/>
+                <field name="last_name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="age"/>
+                <field name="location"/>
+                <field name="working_time"/>
+                <field name="state" widget="badge"/>
+                <field name="create_date" string="Sana"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_agent_application_form" model="ir.ui.view">
+        <field name="name">agent.application.form</field>
+        <field name="model">agent.application</field>
+        <field name="arch" type="xml">
+            <form string="Agent Arizasi">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="new,reviewed,accepted,rejected" clickable="True"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Ism"/> <field name="last_name" placeholder="Familiya"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Aloqa ma'lumotlari">
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="location"/>
+                        </group>
+                        <group string="Shaxsiy ma'lumotlar">
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="working_time"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Tajriba">
+                            <field name="has_experience"/>
+                            <field name="experience_details" invisible="has_experience == 'no'"/>
+                        </group>
+                        <group string="Hujjatlar">
+                            <field name="resume" filename="resume_name"/>
+                            <field name="resume_name" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="O'zi haqida" name="bio">
+                            <field name="bio"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_agent_application" model="ir.actions.act_window">
+        <field name="name">Agent Arizalari</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">agent.application</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hali hech qanday ariza kelib tushmadi.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_agent_recruitment_root" name="Agent Recruitment" sequence="10" web_icon="agent_recruitment,static/description/icon.png"/>
+    <menuitem id="menu_agent_application" name="Arizalar" parent="menu_agent_recruitment_root" action="action_agent_application" sequence="1"/>
+</odoo>

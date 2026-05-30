@@ -1,0 +1,126 @@
+/* Faqat bizning sahifa uchun dizayn */
+.agent_recruitment_wrap {
+    --primary-color: #007bff;
+    --primary-gradient: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --text-main: #2d3436;
+    
+    font-family: 'Outfit', sans-serif;
+    padding: 60px 0;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.agent_recruitment_wrap .agent-form-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.agent_recruitment_wrap .agent-form-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.agent_recruitment_wrap .form-label {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.agent_recruitment_wrap .form-control, 
+.agent_recruitment_wrap .form-select {
+    border: 2px solid #f0f2f5;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background-color: #ffffff !important;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.agent_recruitment_wrap .form-control:focus, 
+.agent_recruitment_wrap .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.1);
+}
+
+/* Custom File Upload */
+.agent_recruitment_wrap .custom-file-upload {
+    border: 2px dashed #d1d8e0;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    background: #f8f9fa;
+}
+
+.agent_recruitment_wrap .custom-file-upload:hover {
+    border-color: var(--primary-color);
+    background: #f0f7ff;
+}
+
+.agent_recruitment_wrap .btn-submit {
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+.agent_recruitment_wrap .success-checkmark {
+    width: 80px;
+    height: 115px;
+    margin: 0 auto;
+}
+
+.agent_recruitment_wrap .check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    border: 4px solid #4CAF50;
+}
+
+.agent_recruitment_wrap .error-message {
+    color: #ff4757;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.agent_recruitment_wrap .is-invalid {
+    border-color: #ff4757 !important;
+}
+
+.agent_recruitment_wrap .shake-animation {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.agent_recruitment_wrap .icon-line {
+    height: 5px;
+    background-color: #4CAF50;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+}
+
+.agent_recruitment_wrap .line-tip {
+    top: 46px; left: 14px; width: 25px; transform: rotate(45deg);
+}
+
+.agent_recruitment_wrap .line-long {
+    top: 38px; right: 8px; width: 47px; transform: rotate(-45deg);
+}

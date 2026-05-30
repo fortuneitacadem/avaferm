@@ -1,0 +1,108 @@
+2026-05-29 12:08:18,274 7988 WARNING ? odoo.tools.config: missing --http-interface/http_interface, using 0.0.0.0 by default, will change to 127.0.0.1 in 20.0 
+2026-05-29 12:08:18,275 7988 INFO ? odoo: Odoo version 19.0 
+2026-05-29 12:08:18,275 7988 INFO ? odoo: Using configuration file at c:\users\asus\desktop\avaferm\avaferm\odoo-19.0\config\odoo.conf 
+2026-05-29 12:08:18,275 7988 INFO ? odoo: addons paths: _NamespacePath(['C:\\Users\\ASUS\\Desktop\\avaferm\\avaferm\\odoo-19.0\\odoo\\addons', 'C:\\Users\\ASUS\\AppData\\Local\\OpenERP S.A.\\Odoo\\addons\\19.0', 'c:\\users\\asus\\desktop\\avaferm\\avaferm\\odoo-19.0\\addons']) 
+2026-05-29 12:08:18,276 7988 INFO ? odoo: database: odoo19@localhost:5432 
+2026-05-29 12:08:18,642 7988 INFO ? odoo.service.server: HTTP service (werkzeug) running on Samir:8069 
+2026-05-29 12:08:18,688 7988 INFO boshqadb odoo.modules.loading: loading 1 modules... 
+2026-05-29 12:08:18,692 7988 INFO boshqadb odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-05-29 12:08:18,721 7988 INFO boshqadb odoo.modules.loading: loading 92 modules... 
+2026-05-29 12:08:19,416 7988 WARNING boshqadb py.warnings: c:\users\asus\desktop\avaferm\avaferm\odoo-19.0\addons\maktab\controllers\main.py:5: DeprecationWarning: Since 19.0, @route(type='json') is a deprecated alias to @route(type='jsonrpc')
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\service\server.py", line 1596, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\service\server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\service\server.py", line 1510, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "c:\users\asus\desktop\avaferm\avaferm\odoo-19.0\addons\maktab\__init__.py", line 2, in <module>
+    from . import controllers
+  File "c:\users\asus\desktop\avaferm\avaferm\odoo-19.0\addons\maktab\controllers\__init__.py", line 1, in <module>
+    from . import main
+  File "c:\users\asus\desktop\avaferm\avaferm\odoo-19.0\addons\maktab\controllers\main.py", line 5, in <module>
+    class MaktabStudio(http.Controller):
+ 
+2026-05-29 12:08:19,422 7988 INFO boshqadb odoo.modules.loading: 92 modules loaded in 0.70s, 0 queries (+0 extra) 
+2026-05-29 12:08:19,590 7988 INFO boshqadb odoo.modules.loading: Modules loaded. 
+2026-05-29 12:08:19,635 7988 INFO boshqadb odoo.registry: Registry loaded in 0.984s 
+2026-05-29 12:08:19,638 7988 INFO boshqadb odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2026-05-29 12:08:19,664 7988 INFO boshqadb odoo.addons.base.models.res_device: User 2 inserts device log (L0Tuz4aiFpqtDmtPKqswX8W_wp0uow3V8HsUq0ASVM) 
+2026-05-29 12:08:19,690 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:19] "GET /web/service-worker.js HTTP/1.1" 200 - 17 0.009 0.845
+2026-05-29 12:08:48,219 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:48] "GET /maktab_studio HTTP/1.1" 200 - 104 0.051 0.405
+2026-05-29 12:08:53,155 7988 INFO boshqadb odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/1/94d52fd/web.assets_frontend.min.css (id:1510) 
+2026-05-29 12:08:53,157 7988 INFO boshqadb odoo.addons.base.models.assetsbundle: Deleting attachments [1509] (matching /web/assets/1/_______/web.assets_frontend.min.css) because it was replaced with /web/assets/1/94d52fd/web.assets_frontend.min.css 
+2026-05-29 12:08:53,165 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:53] "GET /web/assets/1/94d52fd/web.assets_frontend.min.css HTTP/1.1" 200 - 18 0.029 4.591
+2026-05-29 12:08:53,226 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:53] "GET /website/translations?hash=369510de7866dc347e88f68ba414e0cc9a371813&lang=en_US HTTP/1.1" 200 - 2 0.002 0.005
+2026-05-29 12:08:54,952 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:54] "GET /bosh_sahifa HTTP/1.1" 200 - 20 0.017 0.027
+2026-05-29 12:08:55,172 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:55] "GET /website/translations?hash=369510de7866dc347e88f68ba414e0cc9a371813&lang=en_US HTTP/1.1" 200 - 1 0.001 0.001
+2026-05-29 12:08:56,131 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:56] "GET /@/bosh_sahifa HTTP/1.1" 303 - 1 0.001 0.002
+2026-05-29 12:08:57,086 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "GET /odoo/action-website.website_preview?path=/bosh_sahifa HTTP/1.1" 200 - 87 0.025 0.615
+2026-05-29 12:08:57,107 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "GET /web/webclient/load_menus HTTP/1.1" 200 - 2 0.001 0.004
+2026-05-29 12:08:57,508 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "GET /web/webclient/translations?hash=cb37e7f5e162543aef6e882ebebd312973fef9f2&lang=en_US HTTP/1.1" 200 - 1 0.001 0.025
+2026-05-29 12:08:57,642 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /web/action/load HTTP/1.1" 200 - 8 0.005 0.139
+2026-05-29 12:08:57,643 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "GET /web/bundle/web_tour.interactive?lang=en_US HTTP/1.1" 200 - 3 0.004 0.157
+2026-05-29 12:08:57,648 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /web/dataset/call_kw/res.users/has_group#res.users.has_group HTTP/1.1" 200 - 1 0.001 0.071
+2026-05-29 12:08:57,651 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /web/dataset/call_kw/website/web_search_read#website.web_search_read HTTP/1.1" 200 - 6 0.003 0.072
+2026-05-29 12:08:57,680 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /mail/data HTTP/1.1" 200 - 38 0.024 0.158
+2026-05-29 12:08:57,826 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /web/dataset/call_kw/res.users/has_group#res.users.has_group HTTP/1.1" 200 - 1 0.001 0.001
+2026-05-29 12:08:57,950 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /web/dataset/call_kw/res.users/has_group#res.users.has_group HTTP/1.1" 200 - 1 0.000 0.003
+2026-05-29 12:08:57,958 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /web/dataset/call_kw/website/get_current_website#website.get_current_website HTTP/1.1" 200 - 1 0.000 0.005
+2026-05-29 12:08:57,962 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "POST /web/dataset/call_kw/mail.push.device/register_devices#mail.push.device.register_devices HTTP/1.1" 200 - 7 0.002 0.006
+2026-05-29 12:08:57,966 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 9 0.008 0.004
+2026-05-29 12:08:57,986 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:57] "GET /website/force/1?path=/bosh_sahifa HTTP/1.1" 303 - 1 0.000 0.003
+2026-05-29 12:08:58,199 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:58] "GET /website/iframefallback HTTP/1.1" 200 - 16 0.009 0.051
+2026-05-29 12:08:58,297 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:58] "GET /bosh_sahifa HTTP/1.1" 200 - 8 0.009 0.010
+2026-05-29 12:08:58,300 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:58] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 6 0.014 0.007
+2026-05-29 12:08:58,306 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:58] "GET /bus/websocket_worker_bundle?v=19.0-2 HTTP/1.1" 304 - 4 0.003 0.008
+2026-05-29 12:08:58,449 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:58] "GET /web/bundle/website.website_builder_assets?lang=en_US HTTP/1.1" 200 - 7 0.010 0.160
+2026-05-29 12:08:58,516 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:58] "GET /website/translations?hash=369510de7866dc347e88f68ba414e0cc9a371813&lang=en_US HTTP/1.1" 200 - 1 0.000 0.003
+2026-05-29 12:08:58,673 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:58] "GET /websocket?version=19.0-2 HTTP/1.1" 101 - 1 0.001 0.004
+2026-05-29 12:08:58,686 7988 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2026-05-29 12:08:59,070 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:59] "POST /web/dataset/call_kw/ir.ui.view/render_public_asset#ir.ui.view.render_public_asset HTTP/1.1" 200 - 36 0.033 0.367
+2026-05-29 12:08:59,989 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:08:59] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.001
+2026-05-29 12:09:00,552 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:00] "GET /web/bundle/website.assets_inside_builder_iframe?lang=en_US HTTP/1.1" 200 - 8 0.002 0.049
+2026-05-29 12:09:01,649 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:01] "POST /website/theme_customize_data_get HTTP/1.1" 200 - 7 0.003 0.007
+2026-05-29 12:09:01,977 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:01] "POST /website/theme_customize_data_get HTTP/1.1" 200 - 3 0.003 0.001
+2026-05-29 12:09:07,701 7988 INFO boshqadb odoo.registry: Caches invalidated, signaling through the database: ['assets'] 
+2026-05-29 12:09:07,702 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:07] "POST /web/dataset/call_kw/website.assets/make_scss_customization#website.assets.make_scss_customization HTTP/1.1" 200 - 7 0.001 0.009
+2026-05-29 12:09:08,147 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:08] "POST /website/theme_customize_bundle_reload HTTP/1.1" 200 - 24 0.007 0.124
+2026-05-29 12:09:12,762 7988 INFO boshqadb odoo.addons.base.models.assetsbundle: Generating a new asset bundle attachment /web/assets/1/21b33d6/web.assets_frontend.min.css (id:1511) 
+2026-05-29 12:09:12,764 7988 INFO boshqadb odoo.addons.base.models.assetsbundle: Deleting attachments [1510] (matching /web/assets/1/_______/web.assets_frontend.min.css) because it was replaced with /web/assets/1/21b33d6/web.assets_frontend.min.css 
+2026-05-29 12:09:12,769 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:12] "GET /web/assets/1/21b33d6/web.assets_frontend.min.css HTTP/1.1" 200 - 15 0.023 4.464
+2026-05-29 12:09:15,891 7988 INFO ? werkzeug: 127.0.0.1 - - [29/May/2026 12:09:15] "GET /html_builder/static/img/options/bg_shape.svg HTTP/1.1" 200 - 0 0.000 0.001
+2026-05-29 12:09:16,206 7988 INFO ? werkzeug: 127.0.0.1 - - [29/May/2026 12:09:16] "GET /html_builder/static/img/options/mobile_invisible.svg HTTP/1.1" 200 - 0 0.000 0.001
+2026-05-29 12:09:16,207 7988 INFO ? werkzeug: 127.0.0.1 - - [29/May/2026 12:09:16] "GET /html_builder/static/img/options/desktop_invisible.svg HTTP/1.1" 200 - 0 0.000 0.003
+2026-05-29 12:09:27,485 7988 INFO boshqadb odoo.registry: Caches invalidated, signaling through the database: ['templates'] 
+2026-05-29 12:09:27,486 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:27] "POST /web/dataset/call_kw/ir.ui.view/save#ir.ui.view.save HTTP/1.1" 200 - 34 0.018 0.032
+2026-05-29 12:09:27,800 7988 INFO ? werkzeug: 127.0.0.1 - - [29/May/2026 12:09:27] "GET /website/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.003
+2026-05-29 12:09:27,801 7988 INFO ? werkzeug: 127.0.0.1 - - [29/May/2026 12:09:27] "GET /web/static/img/spin.svg HTTP/1.1" 304 - 0 0.000 0.004
+2026-05-29 12:09:28,008 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:28] "GET /bosh_sahifa HTTP/1.1" 200 - 42 0.037 0.286
+2026-05-29 12:09:28,089 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:28] "GET /website/translations?hash=369510de7866dc347e88f68ba414e0cc9a371813&lang=en_US HTTP/1.1" 200 - 1 0.001 0.007
+2026-05-29 12:09:29,287 7988 INFO ? werkzeug: 127.0.0.1 - - [29/May/2026 12:09:29] "GET /website/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.002
+2026-05-29 12:09:29,315 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:29] "GET /maktab_studio HTTP/1.1" 200 - 20 0.012 0.033
+2026-05-29 12:09:29,539 7988 INFO boshqadb werkzeug: 127.0.0.1 - - [29/May/2026 12:09:29] "GET /website/translations?hash=369510de7866dc347e88f68ba414e0cc9a371813&lang=en_US HTTP/1.1" 200 - 1 0.001 0.003
+2026-05-29 12:09:43,653 7988 INFO ? werkzeug: 127.0.0.1 - - [29/May/2026 12:09:43] "GET /website/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.001
+ConsoleCtrlHandler function failedTraceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\service\server.py", line 611, in <lambda>
+    win32api.SetConsoleCtrlHandler(lambda sig: self.signal_handler(sig, None), 1)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\avaferm\avaferm\odoo-19.0\odoo\service\server.py", line 450, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt

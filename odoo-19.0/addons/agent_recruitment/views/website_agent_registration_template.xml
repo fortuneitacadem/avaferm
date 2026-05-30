@@ -1,0 +1,166 @@
+<odoo>
+    <!-- Website Menyu qo'shish -->
+    <record id="menu_agent_apply" model="website.menu">
+        <field name="name">Agent bo'lish</field>
+        <field name="url">/agent/apply</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">25</field>
+    </record>
+
+    <template id="agent_application_form_template" name="Agent Application Form">
+        <t t-call="website.layout">
+            <!-- Font Awesome and Custom Fonts -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+            
+            <div id="wrap" class="oe_structure oe_empty agent_recruitment_wrap">
+                <section class="s_text_block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2">
+                                <div class="agent-form-container p-4 p-md-5">
+                                    <div class="text-center mb-5">
+                                        <h1 class="display-4 fw-bold" style="color: #2d3436;">Agent bo'lib <span style="color: #007bff; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ishga kiring</span></h1>
+                                        <div style="width: 80px; height: 5px; background: var(--primary-gradient); margin: 20px auto; border-radius: 10px;"></div>
+                                        <p class="lead text-muted">Iltimos, quyidagi formani to'ldiring. Biz siz bilan tez orada bog'lanamiz.</p>
+                                    </div>
+                                    
+                                    <form action="/agent/apply/submit" method="post" enctype="multipart/form-data" class="needs-validation" id="agent_apply_form">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <label for="name" class="form-label"><i class="fas fa-user me-2 text-primary"></i>Ism</label>
+                                                <input type="text" name="name" id="name" class="form-control" required="required" placeholder="Masalan: Ali"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="last_name" class="form-label"><i class="fas fa-id-card me-2 text-primary"></i>Familiya</label>
+                                                <input type="text" name="last_name" id="last_name" class="form-control" required="required" placeholder="Masalan: Valiyev"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4 mt-2">
+                                            <div class="col-md-6">
+                                                <label for="phone" class="form-label"><i class="fas fa-phone me-2 text-primary"></i>Telefon raqam</label>
+                                                <input type="tel" name="phone" id="phone" class="form-control" required="required" placeholder="+998 90 123 45 67"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="email" class="form-label"><i class="fas fa-envelope me-2 text-primary"></i>Email</label>
+                                                <input type="email" name="email" id="email" class="form-control" required="required" placeholder="example@mail.com"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4 mt-2">
+                                            <div class="col-md-4">
+                                                <label for="age" class="form-label"><i class="fas fa-birthday-cake me-2 text-primary"></i>Yoshi</label>
+                                                <input type="number" name="age" id="age" class="form-control" required="required" min="18" max="100"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="gender" class="form-label"><i class="fas fa-venus-mars me-2 text-primary"></i>Jinsi</label>
+                                                <select name="gender" id="gender" class="form-select" required="required">
+                                                    <option value="">Tanlang...</option>
+                                                    <option value="male">Erkak</option>
+                                                    <option value="female">Ayol</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="working_time" class="form-label"><i class="fas fa-clock me-2 text-primary"></i>Ishlash vaqti</label>
+                                                <select name="working_time" id="working_time" class="form-select" required="required">
+                                                    <option value="full">To'liq stavka</option>
+                                                    <option value="half">Yarim stavka</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4 mb-4">
+                                            <label class="form-label d-block"><i class="fas fa-briefcase me-2 text-primary"></i>Tajribangiz bormi?</label>
+                                            <div class="form-check form-check-inline me-4">
+                                                <input class="form-check-input" type="radio" name="has_experience" id="exp_yes" value="yes" required="required"/>
+                                                <label class="form-check-label fw-bold" for="exp_yes">Ha</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="has_experience" id="exp_no" value="no" checked="checked"/>
+                                                <label class="form-check-label fw-bold" for="exp_no">Yo'q</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 d-none" id="experience_details_div">
+                                            <label for="experience_details" class="form-label">Tajribangiz haqida batafsil</label>
+                                            <textarea name="experience_details" id="experience_details" class="form-control" rows="3" placeholder="Oldingi ish joylaringiz va yutuqlaringiz..."></textarea>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label"><i class="fas fa-file-pdf me-2 text-primary"></i>Resume (CV) yuklash</label>
+                                            <div class="custom-file-upload" onclick="document.getElementById('resume').click();">
+                                                <i class="fas fa-cloud-upload-alt d-block mb-2" style="font-size: 2rem; color: #007bff;"></i>
+                                                <h5 class="fw-bold">Faylni tanlang yoki shu yerga tashlang</h5>
+                                                <p class="text-muted mb-0" id="file-name">PDF yoki DOC formatlar (Max 5MB)</p>
+                                                <input type="file" name="resume" id="resume" class="d-none" accept=".pdf,.doc,.docx" required="required" onchange="document.getElementById('file-name').innerText = this.files[0].name; document.getElementById('file-name').classList.add('text-primary', 'fw-bold');"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label for="location" class="form-label"><i class="fas fa-map-marker-alt me-2 text-primary"></i>Qaysi hududda ishlamoqchi</label>
+                                            <select name="location" id="location" class="form-select" required="required">
+                                                <option value="">Hududni tanlang...</option>
+                                                <option value="toshkent_sh">Toshkent shahri</option>
+                                                <option value="toshkent_v">Toshkent viloyati</option>
+                                                <option value="andijon">Andijon viloyati</option>
+                                                <option value="buxoro">Buxoro viloyati</option>
+                                                <option value="fargona">Farg'ona viloyati</option>
+                                                <option value="jizzax">Jizzax viloyati</option>
+                                                <option value="xorazm">Xorazm viloyati</option>
+                                                <option value="namangan">Namangan viloyati</option>
+                                                <option value="navoiy">Navoiy viloyati</option>
+                                                <option value="qashqadaryo">Qashqadaryo viloyati</option>
+                                                <option value="samarqand">Samarqand viloyati</option>
+                                                <option value="sirdaryo">Sirdaryo viloyati</option>
+                                                <option value="surxondaryo">Surxondaryo viloyati</option>
+                                                <option value="qoraqalpogiston">Qoraqalpog'iston Respublikasi</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-5">
+                                            <label for="bio" class="form-label"><i class="fas fa-info-circle me-2 text-primary"></i>O'zingiz haqida qisqacha ma'lumot</label>
+                                            <textarea name="bio" id="bio" class="form-control" rows="4" minlength="100" required="required" placeholder="Qiziqishlaringiz, ko'nikmalaringiz..."></textarea>
+                                            <div id="bio_counter" class="text-end small mt-2 text-danger">
+                                                <span id="char_count">0</span> / 100 ta harf
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center mt-5">
+                                            <button type="submit" class="btn btn-submit btn-lg px-5">
+                                                <i class="fas fa-paper-plane me-2"></i> Arizani yuborish
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <template id="agent_application_thanks_template" name="Success">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty agent_recruitment_wrap">
+                <div class="container text-center py-5">
+                    <div class="agent-form-container p-5 d-inline-block shadow-lg" style="max-width: 600px; border-radius: 30px;">
+                        <div class="success-checkmark mb-4">
+                            <div class="check-icon">
+                                <span class="icon-line line-tip"></span>
+                                <span class="icon-line line-long"></span>
+                            </div>
+                        </div>
+                        <h1 class="display-4 fw-bold mb-3" style="color: #2d3436;">Muvaffaqiyatli!</h1>
+                        <h3 class="text-success mb-4 fw-bold">Ma’lumotlaringiz qabul qilindi</h3>
+                        <p class="lead text-muted mb-5">Mutaxassislarimiz tez orada siz bilan bog'lanishadi. E'tiboringiz uchun rahmat!</p>
+                        <a href="/" class="btn btn-submit px-5 py-3 rounded-pill">Bosh sahifaga qaytish</a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
